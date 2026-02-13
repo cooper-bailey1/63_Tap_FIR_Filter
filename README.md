@@ -1,6 +1,6 @@
 # 63-Tap FIR Filter (SystemVerilog)
 
-This repository contains a 63-tap low-pass FIR filter implemented in SystemVerilog. The project was completed as part of a digital IC design lab and focuses on RTL development, fixed-point arithmetic, and functional verification through simulation.
+This repository contains a 63-tap low-pass FIR filter implemented in SystemVerilog. The project focuses on RTL development, fixed-point arithmetic, and functional verification through simulation.
 
 The goal was to translate a high-level signal processing specification into synthesizable hardware and validate its behavior using a custom testbench and reference model.
 
