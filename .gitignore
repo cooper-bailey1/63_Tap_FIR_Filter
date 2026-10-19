@@ -1,0 +1,40 @@
+# Local notes
+/plan
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Simulation and plot products
+*.vvp
+*.vcd
+*.fst
+*.png
+input.txt
+expected_output.txt
+fir_output.txt
+diff_output.txt
+
+# Vivado / Xilinx build output
+.Xil/
+xsim.dir/
+*.jou
+*.log
+*.str
+*.wdb
+*.bit
+*.ltx
+*.dcp
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*~

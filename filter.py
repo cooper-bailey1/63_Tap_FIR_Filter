@@ -72,8 +72,6 @@ h_float = np.array([
 def simulate_signal(fs, n):
     return np.sin(2 * np.pi * 400 / fs * n) + np.sin(2 * np.pi * 500 / fs * n)
 
-#write a function which takes in the quantized values and turns them into a hex representation in 10 bits fixed point
-#make the file named fir_coeffs.hex
 
 def quantized_to_hex(quantized_values, bits=10):
     hex_values = []
@@ -93,7 +91,9 @@ if __name__ == "__main__":
 
     #Quantize x[n]
     quantized_x = [int(round(x * 511)) for x in x_scale]
-   # print("Quantized x[n] values:", quantized_x)
+    with open("input.txt", "w") as f:
+        for value in quantized_x:
+            f.write(str(value) + "\n")
 
     #Quantize h[n] to 10 bits (Using Q1.10 format because the coefficient can all fit into 10 bit representation)
     quantized_h = [int(round(h * 1023)) for h in h_float]
@@ -102,7 +102,6 @@ if __name__ == "__main__":
     expected_output = np.convolve(quantized_x, quantized_h, mode='full')[:256]  # Take only the first 256 samples of the convolution result
 
     quantized_output = [int(round(y / 511)) for y in expected_output]
-    #print("Expected output (convolution result):", expected_output)
     #write expected output to a .txt file
     with open("expected_output.txt", "w") as f:
         for value in quantized_output:

@@ -28,10 +28,7 @@ module tb;
 
   initial begin
        
-    x20[0] = 10'sd0;     x20[1] = 10'sd498;  x20[2] = 10'sd150;  x20[3] = -10'sd406; x20[4] = -10'sd243;
-    x20[5] = 10'sd255;   x20[6] = 10'sd243;  x20[7] = -10'sd105; x20[8] = -10'sd150; x20[9] = 10'sd13;
-    x20[10]= 10'sd0;     x20[11]= -10'sd13;  x20[12]= 10'sd150;  x20[13]= 10'sd105;  x20[14]= -10'sd243;
-    x20[15]= -10'sd256;  x20[16]= 10'sd243;  x20[17]= 10'sd406;  x20[18]= -10'sd150; x20[19]= -10'sd498;
+    $readmemh("fir_inputs.hex", x20);
 
     out_file = $fopen("fir_output.txt", "w");
     if (out_file == 0) begin
